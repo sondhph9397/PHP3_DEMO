@@ -22,13 +22,13 @@ Route::get('/students',function(){
 //sử dụng query builer 
 // return DB::table('students')->where('id','=',26)->get();
 //lấy ra mảng students
-$students = DB::table('students')->get();
+// $students = DB::table('students')->get();
 //lấy ra riêng 1 students
 $students = DB::table('students')->find(26);
-dd($students);
-return $students;
+// dd($students);
+// return $students;
 //truyền vào mảng [tên biến view nhận đc => giá trị $students]
-return view('students.detail', ['studentsValue'=>$students]);
+return view('students.detail', ['studentsValue' => $students]);
 });
 
 
