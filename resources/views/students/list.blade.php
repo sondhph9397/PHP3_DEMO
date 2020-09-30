@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- kế thừa view master trong student-layout/master.blade.php -->
+@extends('student-layout.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Demo student list</title>
-</head>
+<!-- thay đổi nội dung đơn giản -->
+@section('title','Danh Sach')
 
-<body>
+@section('header','Danh sách sinh viên')
+<!-- thay đổi nội dung phức tạp -->
+@section('content')
     <table class="table">
         <thead>
             <th>id</th>
@@ -41,6 +39,6 @@
             @endforeach
         </tbody>
     </table>
-</body>
+@endsection
 
-</html>
+@section('footer','footer list')

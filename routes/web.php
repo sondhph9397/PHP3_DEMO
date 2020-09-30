@@ -46,11 +46,10 @@ Route::get('/students/detail', function () {
 //cách số 2:
 Route::view('/students/detail-2', 'students.detail');
 
-
+//tạo đường dẫn và truy vấn
 Route::get('/students-list', function () {
     //truy vấn
     $students = DB::table('students')->orderBy('id', 'desc')->get();
-
 
     return view('students.list', ['list' => $students]);
 })->name('students-list');
@@ -60,10 +59,10 @@ Route::get('/login', function () {
 })->name('get-login');
 
 Route::post('/post-login', function (Request $request) {
-    dd($request->all());
+    // dd($request->all());
     $username = $request->username;
     //thực hiện truy vấn theo giá trị vừa gửi lên
-    $students = DB::table('students')->where('name', 'like', "%username%")->first();
+    $students = DB::table('students')->where('name', 'like', "%$username%")->first();
     //nếu có student thì sẽ rediẻct sang student-list
     if ($students) {
         return redirect()->route('students-list');
