@@ -21,6 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/admin','test-admin');
+
+
+
+
+
 Route::get('/students', function () {
     //sử dụng query builer 
     // return DB::table('students')->where('id','=',26)->get();
