@@ -55,6 +55,7 @@
                 </td>
                 <td>{{$li->address}}</td>
                 <td>{{$li->is_active == 1 ? 'YES' : 'NO'}}</td>
+                <td><a href="students/{{$li->id}}">Xem</a></td>
               </tr>
               @endforeach
             </tbody>

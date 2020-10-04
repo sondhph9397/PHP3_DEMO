@@ -49,12 +49,12 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         // nếu chỉ truyền vào $student -> chỉ nhận đc id của student
-        $studentObjEloquentModel = Student::find($student);
-        $studentObjQuery = DB::table('students')->find($student);
-        dd($studentObjEloquentModel, $studentObjQuery);
+        // $studentObjEloquentModel = Student::find($student);
+        // $studentObjQueryBuiler = DB::table('students')->find($student);
+        // dd($studentObjEloquentModel, $studentObjQueryBuiler);
         // nếu truyền Student $student -> thực hiện truy vấn tìm student có id
-        $studentObj = $student;
-        return view('students.show',['students'=>$studentObj]);
+        // $studentObj = $student;
+        return view('students.show', ['Showstudents' => $student]);
     }
 
     /**
