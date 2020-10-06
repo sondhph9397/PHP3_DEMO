@@ -14,7 +14,6 @@
     <th>gender</th>
     <th>address</th>
     <th>active</th>
-    <th></th>
   </thead>
   <tbody>
     @foreach($list as $li)
@@ -34,7 +33,17 @@
       </td>
       <td>{{$li->address}}</td>
       <td>{{$li->is_active == 1 ? 'YES' : 'NO'}}</td>
-      <td><a href="students/{{$li->id}}">Xem</a></td>
+      <td>
+        <button class="btn btn-info">Xem</button>
+        <a href="{{route('students.edit',$li->id)}}"><button class="btn btn-success">Sửa</button></a>
+      </td>
+      <td>
+        <form action="{{route('students.destroy',$li->id)}}" method="post">
+          @csrf
+          <input type="hidden" name="_method" value="DELETE"></input>
+          <button class="btn btn-danger" type="submit">Xóa</button> <a href="students/{{$li->id}}"></a>
+        </form>
+      </td>
     </tr>
     @endforeach
   </tbody>
