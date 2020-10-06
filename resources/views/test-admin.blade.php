@@ -14,6 +14,7 @@
     <th>gender</th>
     <th>address</th>
     <th>active</th>
+    <th><a href="{{route('students.create')}}"><button class="btn btn-success">Them</button></a></th>
   </thead>
   <tbody>
     @foreach($list as $li)
