@@ -2,7 +2,7 @@
 
 @section('title','Sua')
 
-@section('content-header','Sua Thong Tin $Editstudent->name')
+@section('content-header',"Sua Thong Tin:git $Editstudent->name")
 
 @section('content')
 <div class="col-4">

@@ -35,7 +35,7 @@
       <td>{{$li->address}}</td>
       <td>{{$li->is_active == 1 ? 'YES' : 'NO'}}</td>
       <td>
-        <button class="btn btn-info">Xem</button>
+      <a href="students/{{$li->id}}"><button class="btn btn-info">Xem</button></a>
         <a href="{{route('students.edit',$li->id)}}"><button class="btn btn-success">Sửa</button></a>
       </td>
       <td>
