@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PostController;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -23,12 +26,16 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('/admin','test-admin');
+Route::view('/admin', 'test-admin');
 
 //tạo route resouce cho student controller
 Route::resource('students', StudentController::class);
 // CATEGORYS
-
+Route::resource('categorys', CategoryController::class);
+//POSTS
+Route::resource('posts', PostController::class);
+//COMMENTS
+Route::resource('comments',CommentController::class);
 
 
 //tạo roure cho student không dùng resouce
