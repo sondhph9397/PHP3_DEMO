@@ -38,14 +38,7 @@
             <input type="radio" name="is_active" id="is_active" value="1"> Kich hoat
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
-       <a href="{{route('students.index')}}">Cancel
-<<<<<<< HEAD
-
-=======
-           
->>>>>>> 6684721f43d4642903f06886190af7f8891ea4ad
-       </a>
+       <a href="{{route('students.index')}}">Cancel</a>
     </form>
 </div>
-
 @endsection

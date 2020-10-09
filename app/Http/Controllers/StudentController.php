@@ -16,7 +16,11 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all(); //lấy ra hết hoặc $students = Student::orderBy('id','desc')->get();
+        // lấy danh sách có phân trang (5 student 1 trang)
+        $students = Student::paginate(5);
+        
         return view('test-admin', ['list' => $students]);
+
     }
 
     /**

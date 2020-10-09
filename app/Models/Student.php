@@ -19,4 +19,9 @@ class Student extends Model
         'address',
         'is_active'
     ];
+
+    //fucntion posts thể hiện 1 student có nhiều bài viết
+    public function posts(){
+        return $this->hasMany(Post::class,'student_id','id');
+    }
 }

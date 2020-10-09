@@ -35,7 +35,7 @@
       <td>{{$li->address}}</td>
       <td>{{$li->is_active == 1 ? 'YES' : 'NO'}}</td>
       <td>
-      <a href="students/{{$li->id}}"><button class="btn btn-info">Xem</button></a>
+        <a href="students/{{$li->id}}"><button class="btn btn-info">Xem</button></a>
         <a href="{{route('students.edit',$li->id)}}"><button class="btn btn-success">Sửa</button></a>
       </td>
       <td>
@@ -47,6 +47,11 @@
       </td>
     </tr>
     @endforeach
+
+    <!-- hiển thị nút phân trang -->
+    <tr>
+      <td colspan="7">{{$list->links()}}</td>
+    </tr>
   </tbody>
 </table>
 @endsection

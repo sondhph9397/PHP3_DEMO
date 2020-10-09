@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StudentController;
+use App\Models\Category;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -25,11 +27,12 @@ Route::view('/admin','test-admin');
 
 //tạo route resouce cho student controller
 Route::resource('students', StudentController::class);
+// CATEGORYS
+
+
 
 //tạo roure cho student không dùng resouce
 // Route::get('students',[StudentController::class, 'index'])->name('students.index')
-
-
 
 // STUDENT
 
