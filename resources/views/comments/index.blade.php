@@ -20,7 +20,7 @@
             <td>{{$co->id}}</td>
             <td>{{$co->content}}</td>
             <td>{{$co->student->name}}</td>
-            <td>{{$co->post->name}}</td>
+            <td>{{$co->post->desc}}</td>
             <td>
                 @if ($co->status == 0)
                 No
