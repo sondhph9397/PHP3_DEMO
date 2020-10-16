@@ -21,7 +21,7 @@
             <td>{{$po->id}}</td>
             <td>{{$po->desc}}</td>
             <td>{{$po->content}}</td>
-            <td><img src="{{$po->image_url}}" width="100" alt=""></td>
+            <td><img src="{{ substr($po->image_url, 0, 4) == 'http' ? $po->image_url : asset("images/$po->image_url")}}" width="100" alt=""></td>
             <td>{{$po->student->name}}</td>
             <td>
                 @if ($po->status == 0)
@@ -33,14 +33,14 @@
                 @endif
             </td>
             <td>
-                <a href="students/{{$po->id}}"><button class="btn btn-info">Xem</button></a>
-                <a href="{{route('students.edit',$po->id)}}"><button class="btn btn-success">Sửa</button></a>
+                <a href="posts/{{$po->id}}"><button class="btn btn-info">Xem</button></a>
+                <a href="{{route('posts.edit',$po->id)}}"><button class="btn btn-success">Sửa</button></a>
             </td>
             <td>
-                <form action="{{route('students.destroy',$po->id)}}" method="post">
+                <form action="{{route('posts.destroy',$po->id)}}" method="post">
                     @csrf
                     <input type="hidden" name="_method" value="DELETE"></input>
-                    <button class="btn btn-danger" type="submit">Xóa</button> <a href="students/{{$po->id}}"></a>
+                    <button class="btn btn-danger" type="submit">Xóa</button> <a href="posts/{{$po->id}}"></a>
                 </form>
             </td>
         </tr>

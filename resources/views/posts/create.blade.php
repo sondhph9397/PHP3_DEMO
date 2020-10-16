@@ -4,19 +4,28 @@
 @section('content-header','Bai Viet')
 
 @section('content')
-<form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+@if($errors->any())
+<ul>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+</ul>
+@endif
+<form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
+    @csrf
     <div>
-        <input type="text" name="desc">
+        <input type="text" name="desc" placeholder="desc">
+       
     </div>
     <div>
-        <input type="text" name="content">
+        <input type="text" name="content" placeholder="content"> 
     </div>
     <div>
         <input type="file" name="image">
     </div>
     <div>
         <select name="student_id" id="">
-            @foreach($students as $item)
+            @foreach($student as $item)
             <option value="{{$item->id}}">{{$item->name}}</option>
             @endforeach
         </select>
